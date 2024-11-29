@@ -1,0 +1,16 @@
+create database bot_reminder
+
+create table users (
+    id_user bigserial primary key,
+    chat_id bigint not null
+);
+
+create table reminders (
+    id_reminder bigserial primary key,
+    id_user BIGINT REFERENCES users(id_user),
+    name_reminder varchar(100) not null,
+    text_reminder text not null,
+    date_reminder timestamp not null 
+);
+'2023-11-02 15:30:00'
+
